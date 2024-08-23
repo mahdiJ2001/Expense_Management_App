@@ -29,22 +29,22 @@ The **Expense Management App** is a comprehensive solution designed to help user
 ### Dashboard
 
 ![Dashboard 1](https://github.com/mahdiJ2001/Expense_Management_App/blob/master/assets/DASH1.png)
-![Dashboard 2](https://github.com/mahdiJ2001/Expense_Management_App/blob/main/assets/DASH2.png)
-![Dashboard 3](https://github.com/mahdiJ2001/Expense_Management_App/blob/main/assets/DASH3.png)
+![Dashboard 2](https://github.com/mahdiJ2001/Expense_Management_App/blob/master/assets/DASH2.png)
+![Dashboard 3](https://github.com/mahdiJ2001/Expense_Management_App/blob/master/assets/DASH3.png)
 
 ### User Interface
 
-![Drag and Drop](https://github.com/mahdiJ2001/Expense_Management_App/blob/main/assets/DRAGDROP.png)
-![Edit Expense](https://github.com/mahdiJ2001/Expense_Management_App/blob/main/assets/EDITEXPENSE.png)
-![Expense Tracking](https://github.com/mahdiJ2001/Expense_Management_App/blob/main/assets/EXPENSE.png)
-![Income Tracking](https://github.com/mahdiJ2001/Expense_Management_App/blob/main/assets/INCOME.png)
+![Drag and Drop](https://github.com/mahdiJ2001/Expense_Management_App/blob/master/assets/DRAGDROP.png)
+![Edit Expense](https://github.com/mahdiJ2001/Expense_Management_App/blob/master/assets/EDITEXPENSE.png)
+![Expense Tracking](https://github.com/mahdiJ2001/Expense_Management_App/blob/master/assets/EXPENSE.png)
+![Income Tracking](https://github.com/mahdiJ2001/Expense_Management_App/blob/master/assets/INCOME.png)
 
 ### Reports
 
-![Income Report](https://github.com/mahdiJ2001/Expense_Management_App/blob/main/assets/INCOMEREPORT.png)
-![Expense Report](https://github.com/mahdiJ2001/Expense_Management_App/blob/main/assets/REPORTEXPENSE.png)
+![Income Report](https://github.com/mahdiJ2001/Expense_Management_App/blob/master/assets/INCOMEREPORT.png)
+![Expense Report](https://github.com/mahdiJ2001/Expense_Management_App/blob/master/assets/REPORTEXPENSE.png)
 
 ### Authentication
 
-![Login](https://github.com/mahdiJ2001/Expense_Management_App/blob/main/assets/LOGIN.png)
-![Register](https://github.com/mahdiJ2001/Expense_Management_App/blob/main/assets/REGISTER.png)
+![Login](https://github.com/mahdiJ2001/Expense_Management_App/blob/master/assets/LOGIN.png)
+![Register](https://github.com/mahdiJ2001/Expense_Management_App/blob/master/assets/REGISTER.png)
