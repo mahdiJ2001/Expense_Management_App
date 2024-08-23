@@ -1,0 +1,124 @@
+<div class="container">
+  <!-- Total Sum Section -->
+  <mat-card class="total-sum-card">
+    <div class="total-sum-title">Total Expenses</div>
+    <div class="total-sum-amount">{{ totalExpense | currency }}</div>
+  </mat-card>
+
+  <!-- Expense Form on the Left -->
+  <mat-card class="expense-card">
+    <div class="title-container">
+      <mat-card-title class="card-title">Post New Expense</mat-card-title>
+    </div>
+    <form [formGroup]="expenseForm" (ngSubmit)="submitForm()" class="custom-form">
+      <div>
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Amount</mat-label>
+          <input matInput formControlName="amount" placeholder="Amount" />
+          <mat-icon matSuffix>attach_money</mat-icon>
+          <mat-error *ngIf="expenseForm.controls['amount'].hasError('required')">
+            Please enter an amount
+          </mat-error>
+          <mat-error *ngIf="expenseForm.controls['amount'].hasError('pattern')">
+            Please enter a valid amount
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Date</mat-label>
+          <input matInput [matDatepicker]="picker" formControlName="date" placeholder="Choose a date" />
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+          <mat-error *ngIf="expenseForm.controls['date'].hasError('required')">
+            Please select a date
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="category-section">
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Category</mat-label>
+          <mat-select formControlName="category" placeholder="Category">
+            <mat-option *ngFor="let cat of categories" [value]="cat.id">
+              {{ cat.name }}
+            </mat-option>
+          </mat-select>
+          <mat-error *ngIf="expenseForm.controls['category'].hasError('required')">
+            Please select a category
+          </mat-error>
+        </mat-form-field>
+        
+        <!-- Add Category Button -->
+        <button mat-icon-button color="primary" (click)="goToCategoryPage()" class="add-category-button">
+          <mat-icon>add</mat-icon>
+        </button>
+      </div>
+
+      <div>
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Note</mat-label>
+          <textarea matInput formControlName="note" placeholder="Add a note"></textarea>
+          <mat-icon matSuffix>note</mat-icon>
+        </mat-form-field>
+      </div>
+
+      <button mat-raised-button color="accent" [disabled]="expenseForm.invalid" class="submit-button">
+        <mat-icon>save</mat-icon>
+        Register Expense
+      </button>
+    </form>
+
+    <div class="upload-info">
+      You can upload multiple Expenses via an Excel file with the format (Amount, Date, Note):
+    </div>
+    
+    <!-- Upload Expenses Button -->
+    <div class="upload-section">
+      <button mat-raised-button color="primary" (click)="openUploadDialog()" class="upload-button">
+        <mat-icon>upload</mat-icon>
+        Upload Expenses
+      </button>
+    </div>
+  </mat-card>
+
+  <!-- Expense History on the Right -->
+  <mat-card class="history-card">
+    <div class="history-header">
+      <div class="history-title">Expense History</div>
+      <button mat-raised-button color="primary" (click)="generateReport()" class="generate-report-button">
+        <mat-icon>picture_as_pdf</mat-icon> 
+        Generate Report
+      </button>
+    </div>
+    <mat-list>
+      <mat-list-item *ngFor="let expense of recentExpenses" class="expense-item">
+        <div class="expense-details">
+          <div class="expense-icon">
+            <mat-icon>attach_money</mat-icon>
+          </div>
+          <div class="expense-amount">{{ expense.amount | currency }}</div>
+          <div class="expense-icon">
+            <mat-icon>calendar_today</mat-icon>
+          </div>
+          <div class="expense-date">{{ expense.date | date }}</div>
+          <div class="expense-icon">
+            <mat-icon>category</mat-icon>
+          </div>
+          <div class="expense-category">
+            {{ getCategoryName(expense.categoryId) || 'Uncategorized' }}
+          </div>
+          <div class="expense-actions">
+            <button mat-icon-button (click)="editExpense(expense)">
+              <mat-icon>edit</mat-icon>
+            </button>
+            <button mat-icon-button (click)="deleteExpense(expense.id)">
+              <mat-icon>delete</mat-icon>
+            </button>
+          </div>
+        </div>    
+      </mat-list-item>
+    </mat-list>
+  </mat-card>
+</div>

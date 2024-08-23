@@ -1,0 +1,27 @@
+<form [formGroup]="uploadForm" (ngSubmit)="onSubmit()" class="upload-form">
+  <mat-card class="upload-card">
+    <mat-card-header class="card-header">
+      <mat-card-title class="card-title">Upload Expenses</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="file-input-container">
+        <input id="file-upload" type="file" (change)="onFileChange($event)" class="file-input" />
+        <label for="file-upload" class="file-upload-label">
+          <mat-icon>attach_file</mat-icon>
+          <span *ngIf="selectedFile">{{ selectedFile.name }}</span>
+          <span *ngIf="!selectedFile">Choose a .xlsx file</span>
+        </label>
+        <mat-error *ngIf="fileError">{{ fileError }}</mat-error>
+      </div>
+    </mat-card-content>
+    <mat-card-actions class="dialog-actions">
+      <button mat-raised-button color="primary" type="submit" class="upload-button">
+        <mat-icon>upload</mat-icon>
+        Upload
+      </button>
+      <button mat-button type="button" (click)="onNoClick()" class="cancel-button">
+        Cancel
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</form>

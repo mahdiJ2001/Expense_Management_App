@@ -1,0 +1,122 @@
+<div class="balance-card mat-elevation-z3">
+  <div class="balance-section">
+    <div>
+      <h3>Balance</h3>
+      <p>{{ balance | currency }}</p>
+    </div>
+    <div class="separator"></div>
+    <div>
+      <h3>Income</h3>
+      <p>{{ income | currency }}</p>
+    </div>
+    <div class="separator"></div>
+    <div>
+      <h3>Expense</h3>
+      <p>{{ expense | currency }}</p>
+    </div>
+  </div>
+</div>
+
+<div class="content">
+  <div class="left-content">
+
+    <div class="chart-controls">
+      <button mat-button class="merge-button" (click)="toggleMergeCharts()">
+        {{ isMerged ? 'Unmerge Charts' : 'Merge Charts' }}
+      </button>
+    </div>
+    
+    
+
+
+
+    <!-- Expense Chart Card -->
+    <mat-card class="chart-card mat-elevation-z3">
+      <h3>{{ chartTitle }}</h3>
+      <mat-form-field appearance="outline" class="full-width dashboard-dropdown">
+        <mat-label>Scale</mat-label>
+        <mat-select (selectionChange)="onScaleChange($event.value, 'expense')">
+            <mat-option value="days">Days</mat-option>
+            <mat-option value="weeks">Weeks</mat-option>
+            <mat-option value="months">Months</mat-option>
+        </mat-select>
+    </mat-form-field>    
+      <canvas id="expenseChart"></canvas> <!-- Canvas for the chart -->
+    </mat-card>
+
+    <!-- Income Chart Card -->
+    <div id="incomeChartContainer">
+      <mat-card class="chart-card mat-elevation-z3">
+        <h3>Income Chart</h3>
+        <mat-form-field appearance="outline" class="full-width dashboard-dropdown">
+          <mat-label>Scale</mat-label>
+          <mat-select (selectionChange)="onScaleChange($event.value, 'income')">
+            <mat-option value="days">Days</mat-option>
+            <mat-option value="weeks">Weeks</mat-option>
+            <mat-option value="months">Months</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <canvas id="incomeChart"></canvas> <!-- Canvas for the income chart -->
+      </mat-card>
+    </div>
+  </div>
+
+  <div class="right-content">
+    <!-- Latest Expense & Income Card -->
+    <mat-card class="info-card mat-elevation-z3">
+      <h3>Latest Expense & Income</h3>
+      <div class="info-section">
+        <div>
+          <h4>Latest Expense</h4>
+          <p>Amount: {{ latestExpense.amount | currency }}</p>
+          <p>Date: {{ latestExpense.date | date }}</p>
+          <p>Category: {{ latestExpense.category }}</p>
+        </div>
+        <div>
+          <h4>Latest Income</h4>
+          <p>Amount: {{ latestIncome.amount | currency }}</p>
+          <p>Date: {{ latestIncome.date | date }}</p>
+          <p>Category: {{ latestIncome.category }}</p>
+        </div>
+      </div>
+    </mat-card>
+
+    <!-- Min & Max Expense Card -->
+    <mat-card class="info-card mat-elevation-z3">
+      <h3>Min & Max Expense</h3>
+      <div class="info-section">
+        <div>
+          <h4>Min Expense</h4>
+          <p>Amount: {{ minExpense.amount | currency }}</p>
+          <p>Date: {{ minExpense.date | date }}</p>
+          <p>Category: {{ minExpense.category }}</p>
+        </div>
+        <div>
+          <h4>Max Expense</h4>
+          <p>Amount: {{ maxExpense.amount | currency }}</p>
+          <p>Date: {{ maxExpense.date | date }}</p>
+          <p>Category: {{ maxExpense.category }}</p>
+        </div>
+      </div>
+    </mat-card>
+
+    <!-- Min & Max Income Card -->
+    <mat-card class="info-card mat-elevation-z3">
+      <h3>Min & Max Income</h3>
+      <div class="info-section">
+        <div>
+          <h4>Min Income</h4>
+          <p>Amount: {{ minIncome.amount | currency }}</p>
+          <p>Date: {{ minIncome.date | date }}</p>
+          <p>Category: {{ minIncome.category }}</p>
+        </div>
+        <div>
+          <h4>Max Income</h4>
+          <p>Amount: {{ maxIncome.amount | currency }}</p>
+          <p>Date: {{ maxIncome.date | date }}</p>
+          <p>Category: {{ maxIncome.category }}</p>
+        </div>
+      </div>
+    </mat-card>
+  </div>
+</div>

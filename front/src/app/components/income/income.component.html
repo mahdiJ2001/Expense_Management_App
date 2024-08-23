@@ -1,0 +1,125 @@
+<div class="container">
+    <!-- Total Income Section -->
+    <mat-card class="total-sum-card">
+        <div class="total-sum-title">Total Income</div>
+        <div class="total-sum-amount">{{ totalIncome | currency }}</div>
+    </mat-card>
+
+    <!-- Income Form on the Left -->
+    <mat-card class="income-card">
+        <div class="title-container">
+            <mat-card-title class="card-title">Post New Income</mat-card-title>
+        </div>
+        <form [formGroup]="incomeForm" (ngSubmit)="submitForm()" class="custom-form">
+            <div>
+                <mat-form-field appearance="outline" class="full-width">
+                    <mat-label>Amount</mat-label>
+                    <input matInput formControlName="amount" placeholder="Amount" />
+                    <mat-icon matSuffix>attach_money</mat-icon>
+                    <mat-error *ngIf="incomeForm.controls['amount'].hasError('required')">
+                        Please enter an amount
+                    </mat-error>
+                    <mat-error *ngIf="incomeForm.controls['amount'].hasError('pattern')">
+                        Please enter a valid amount
+                    </mat-error>
+                </mat-form-field>
+            </div>
+
+            <div>
+                <mat-form-field appearance="outline" class="full-width">
+                    <mat-label>Date</mat-label>
+                    <input matInput [matDatepicker]="picker" formControlName="date" placeholder="Choose a date" />
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                    <mat-error *ngIf="incomeForm.controls['date'].hasError('required')">
+                        Please select a date
+                    </mat-error>
+                </mat-form-field>
+            </div>
+
+            <div class="category-section">
+                <mat-form-field appearance="outline" class="full-width">
+                    <mat-label>Category</mat-label>
+                    <mat-select formControlName="category" placeholder="Category">
+                        <mat-option *ngFor="let cat of categories" [value]="cat.id">
+                            {{ cat.name }}
+                        </mat-option>
+                    </mat-select>
+                    <mat-error *ngIf="incomeForm.controls['category'].hasError('required')">
+                        Please select a category
+                    </mat-error>
+                </mat-form-field>
+            
+                <!-- Add Category Button -->
+                <button mat-icon-button color="primary" (click)="goToCategoryPage()" class="add-category-button">
+                    <mat-icon>add</mat-icon>
+                </button>
+            </div>
+
+            <div>
+                <mat-form-field appearance="outline" class="full-width">
+                    <mat-label>Note</mat-label>
+                    <textarea matInput formControlName="note" placeholder="Add a note"></textarea>
+                    <mat-icon matSuffix>note</mat-icon>
+                </mat-form-field>
+            </div>
+
+            <button mat-raised-button color="accent" [disabled]="incomeForm.invalid" class="submit-button">
+                <mat-icon>save</mat-icon>
+                Register Income
+            </button>
+        </form>
+
+        <!-- Text for Uploading Incomes -->
+        <div class="upload-info">
+            You can upload multiple Incomes via an Excel file with the format (Amount, Date, Note):
+        </div>
+
+        <!-- Upload Incomes Button -->
+        <div class="upload-section">
+            <button mat-raised-button color="primary" (click)="openUploadDialog()" class="upload-button">
+                <mat-icon>upload</mat-icon>
+                UPLOAD INCOMES
+            </button>
+        </div>
+    </mat-card>
+
+    <!-- Income History on the Right -->
+    <mat-card class="history-card">
+        <div class="history-header">
+            <div class="history-title">Income History</div>
+            <button mat-raised-button color="primary" (click)="generateReport()" class="generate-report-button">
+              <mat-icon>picture_as_pdf</mat-icon>
+              Generate Report
+            </button>
+          </div>
+        <mat-list>
+            <mat-list-item *ngFor="let income of recentIncome" class="income-item">
+                <div class="income-details">
+                    <div class="income-icon">
+                        <mat-icon>attach_money</mat-icon>
+                    </div>
+                    <div class="income-amount">{{ income.amount | currency }}</div>
+                    <div class="income-icon">
+                        <mat-icon>calendar_today</mat-icon>
+                    </div>
+                    <div class="income-date">{{ income.date | date }}</div>
+                    <div class="income-icon">
+                        <mat-icon>category</mat-icon>
+                    </div>
+                    <div class="income-category">
+                        {{ getCategoryName(income.categoryId) || 'Uncategorized' }}
+                    </div>
+                    <div class="income-actions">
+                        <button mat-icon-button (click)="editIncome(income)">
+                            <mat-icon>edit</mat-icon>
+                        </button>
+                        <button mat-icon-button (click)="deleteIncome(income.id)">
+                            <mat-icon>delete</mat-icon>
+                        </button>
+                    </div>
+                </div>
+            </mat-list-item>
+        </mat-list>
+    </mat-card>
+</div>

@@ -1,0 +1,211 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 20px;
+    flex-wrap: wrap;
+}
+
+
+.total-sum-card {
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 16px;
+    background-color: #c3fade;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    text-align: center;
+}
+
+.total-sum-title {
+    font-size: 18px;
+    font-weight: 500;
+    color: #00796b;
+    margin-bottom: 8px;
+}
+
+.total-sum-amount {
+    font-size: 24px;
+    font-weight: bold;
+    color: #004d23;
+}
+
+
+.income-card {
+    padding: 24px;
+    width: 600px;
+    background-color: #f7f7f7;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.title-container {
+    background-color: #e0e0e0;
+    width: 100%;
+    padding: 8px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+    text-align: center;
+}
+
+.card-title {
+    font-size: 18px;
+    font-weight: 500;
+    color: #333;
+}
+
+.custom-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 16px;
+}
+
+.full-width {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+button.submit-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 12px 0;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+}
+
+.history-card {
+    flex: 1;
+    max-width: 60%;
+    min-height: 575px;
+    padding: 16px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.history-title {
+    font-size: 20px;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 16px;
+}
+
+.income-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    padding: 8px;
+    background-color: #f9f9f9;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.income-details {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.income-icon {
+    display: flex;
+    align-items: center;
+}
+
+.income-amount,
+.income-date,
+.income-category {
+    font-size: 16px;
+    color: #333;
+    margin: 0 8px;
+}
+
+.income-date,
+.income-category {
+    font-size: 14px;
+}
+
+.income-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-left: auto;
+}
+
+button.mat-icon-button {
+    padding: 8px;
+}
+
+.category-section {
+    display: flex;
+    align-items: center;
+}
+
+.category-field {
+    flex-grow: 1;
+}
+
+.add-category-button {
+    margin-left: 8px;
+    transform: translateY(-18px);
+}
+
+
+.history-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+
+button.generate-report-button,
+button.upload-button {
+    background-color: green;
+    color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-transform: uppercase;
+}
+
+button.generate-report-button {
+    background-color: green;
+}
+
+button.generate-report-button:hover {
+    background-color: darkgreen;
+}
+
+button.upload-button {
+    max-width: 200px;
+}
+
+button.upload-button:hover {
+    background-color: darkgreen;
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+.upload-info {
+    margin: 20px 0;
+    font-size: 16px;
+    color: #333;
+    font-weight: 500;
+    line-height: 1.5;
+    text-align: center;
+    padding: 15px;
+    border-left: 4px solid #007bff;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-family: 'Roboto', sans-serif;
+}

@@ -1,0 +1,97 @@
+.upload-card {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+}
+
+
+.card-header {
+    background: linear-gradient(45deg, #00796b, #004d40);
+    padding: 16px;
+    color: #ffffff;
+}
+
+.card-title {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+
+.file-input-container {
+    margin: 20px 0;
+    text-align: center;
+    position: relative;
+}
+
+.file-upload-label {
+    display: block;
+    cursor: pointer;
+    padding: 20px;
+    border: 2px dashed #009688;
+    border-radius: 8px;
+    background-color: #e0f2f1;
+    color: #00796b;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.file-upload-label:hover {
+    background-color: #b2dfdb;
+    border-color: #00796b;
+}
+
+.file-input-container.drag-over {
+    background-color: #b2dfdb;
+    border-color: #00796b;
+    color: #004d40;
+}
+
+.file-input {
+    display: none;
+}
+
+.dialog-actions {
+    display: flex;
+    justify-content: space-between;
+    padding: 16px;
+    border-top: 1px solid #e0e0e0;
+    margin-top: 30px;
+}
+
+button.mat-raised-button.upload-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 12px 0;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background: linear-gradient(45deg, #00796b, #004d40);
+    color: white;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+}
+
+button.mat-raised-button.upload-button:hover {
+    background: linear-gradient(45deg, #004d40, #00796b);
+}
+
+button.mat-button.cancel-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 12px 0;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #00796b;
+    border-radius: 4px;
+    background: transparent;
+}
+
+button.mat-button.cancel-button:hover {
+    background-color: rgba(0, 150, 136, 0.1);
+}

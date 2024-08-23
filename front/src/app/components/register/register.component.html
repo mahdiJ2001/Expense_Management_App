@@ -1,0 +1,69 @@
+<div class="login-wrapper">
+  <mat-card class="box">
+    <mat-card-header>
+      <mat-card-title>Register</mat-card-title>
+    </mat-card-header>
+    <form [formGroup]="registerForm" (ngSubmit)="registerUser()" class="example-form">
+      <mat-card-content>
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>First Name</mat-label>
+          <input matInput formControlName="firstName" placeholder="First Name" required>
+        </mat-form-field>
+        <div *ngIf="f['firstName'].invalid && (f['firstName'].dirty || f['firstName'].touched)" class="error-message">
+          <div *ngIf="f['firstName'].errors?.['required']">First Name is required.</div>
+        </div>
+
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Last Name</mat-label>
+          <input matInput formControlName="lastName" placeholder="Last Name" required>
+        </mat-form-field>
+        <div *ngIf="f['lastName'].invalid && (f['lastName'].dirty || f['lastName'].touched)" class="error-message">
+          <div *ngIf="f['lastName'].errors?.['required']">Last Name is required.</div>
+        </div>
+
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Email</mat-label>
+          <input matInput type="email" formControlName="email" placeholder="Email" required>
+        </mat-form-field>
+        <div *ngIf="f['email'].invalid && (f['email'].dirty || f['email'].touched)" class="error-message">
+          <div *ngIf="f['email'].errors?.['required']">Email is required.</div>
+          <div *ngIf="f['email'].errors?.['email']">Invalid email format.</div>
+        </div>
+
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Phone</mat-label>
+          <input matInput type="tel" formControlName="phone" placeholder="Phone" required>
+        </mat-form-field>
+        <div *ngIf="f['phone'].invalid && (f['phone'].dirty || f['phone'].touched)" class="error-message">
+          <div *ngIf="f['phone'].errors?.['required']">Phone is required.</div>
+        </div>
+
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Password</mat-label>
+          <input matInput type="password" formControlName="password" placeholder="Password" required>
+        </mat-form-field>
+        <div *ngIf="f['password'].invalid && (f['password'].dirty || f['password'].touched)" class="error-message">
+          <div *ngIf="f['password'].errors?.['required']">Password is required.</div>
+          <div *ngIf="f['password'].errors?.['minlength']">Password must be at least 6 characters.</div>
+        </div>
+
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Role</mat-label>
+          <mat-select formControlName="role" placeholder="Select Role">
+            <mat-option *ngFor="let role of roles" [value]="role">{{ role }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <div *ngIf="f['role'].invalid && (f['role'].dirty || f['role'].touched)" class="error-message">
+          <div *ngIf="f['role'].errors?.['required']">Role is required.</div>
+        </div>
+      </mat-card-content>
+
+      <button mat-stroked-button color="accent" class="btn-block" type="submit" [disabled]="registerForm.invalid">
+        Register
+      </button>
+    </form>
+    <div class="form-links">
+      <a routerLink="/login">Already have an account? Log in</a>
+    </div>
+  </mat-card>
+</div>

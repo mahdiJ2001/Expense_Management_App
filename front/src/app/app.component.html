@@ -1,0 +1,35 @@
+<div class="layout">
+  <div *ngIf="(isLoggedIn$ | async) && !isAuthPage()">
+    <div class="sider">
+      <div class="user-info">
+        <i class="icon" nz-icon nzType="user" nzTheme="outline"></i>
+        <span class="user-name">{{ userFirstName }} {{ userLastName }}</span>
+      </div>
+      <ul class="menu">
+        <li class="menu-item" (click)="navigateTo('/dashboard')">
+          <i class="icon" nz-icon nzType="dashboard"></i>
+          <span>Dashboard</span>
+        </li>
+        <li class="menu-item" (click)="navigateTo('/expense')">
+          <i class="icon" nz-icon nzType="dollar"></i>
+          <span>Expense</span>
+        </li>
+        <li class="menu-item" (click)="navigateTo('/income')">
+          <i class="icon" nz-icon nzType="bank" nzTheme="outline"></i>
+          <span>Income</span>
+        </li>
+        <li class="menu-item" (click)="navigateTo('/categories')">
+          <i class="icon" nz-icon nzType="appstore"></i>
+          <span>Categories</span>
+        </li>
+        <li class="menu-item" (click)="logout()">
+          <i class="icon" nz-icon nzType="logout"></i>
+          <span>Logout</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="right-layout">
+    <router-outlet></router-outlet>
+  </div>
+</div>

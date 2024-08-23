@@ -1,0 +1,67 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+}
+
+
+.income-edit-card {
+    width: 600px;
+    padding: 24px;
+    background-color: #fafafa;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.custom-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 16px;
+}
+
+.full-width {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.title-container {
+    background-color: #e3f2fd;
+    width: 100%;
+    padding: 8px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+    text-align: center;
+}
+
+.card-title {
+    font-size: 18px;
+    font-weight: 500;
+    color: #0288d1;
+}
+
+button.submit-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 12px 0;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    background-color: #037ff3;
+    color: #ffffff;
+}
+
+button.submit-button:hover {
+    background-color: #21d2d8;
+}
+
+.add-category-button {
+    margin-left: 8px;
+    transform: translateY(-15px);
+}
