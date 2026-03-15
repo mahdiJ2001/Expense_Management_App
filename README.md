@@ -42,10 +42,6 @@ The **Expense Management App** is a comprehensive solution designed to help user
 ![Expense Tracking](https://github.com/mahdiJ2001/Expense_Management_App/blob/master/assets/EXPENSE.png)
 ![Income Tracking](https://github.com/mahdiJ2001/Expense_Management_App/blob/master/assets/INCOME.png)
 
-### Reports
-
-![Income Report](https://github.com/mahdiJ2001/Expense_Management_App/blob/master/assets/INCOMEREPORT.png)
-![Expense Report](https://github.com/mahdiJ2001/Expense_Management_App/blob/master/assets/REPORTEXPENSE.png)
 
 ### Authentication
 
